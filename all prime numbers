@@ -1,0 +1,41 @@
+//write a code in c to print all prime numbers in an array
+#include <stdio.h>
+
+// Function to check if a number is prime
+int isPrime(int num) {
+    if (num <= 1) {
+        return 0; // 0 indicates not prime
+    }
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0) {
+            return 0; // 0 indicates not prime
+        }
+    }
+    return 1; // 1 indicates prime
+}
+
+int main() {
+    int size;
+    
+    // Get the size of the array
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+
+    int arr[size];
+
+    // Get array elements from the user
+    printf("Enter the elements of the array:\n");
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Prime numbers in the array: ");
+    for (int i = 0; i < size; i++) {
+        if (isPrime(arr[i])) {
+            printf("%d ", arr[i]);
+        }
+    }
+    printf("\n");
+
+    return 0;
+}
