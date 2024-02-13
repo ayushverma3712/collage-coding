@@ -1,0 +1,36 @@
+//write a code in c to delete duplicate numbers in an array
+#include <stdio.h>
+
+int main() {
+    int arr[10],i,n;
+    printf("inter the size of an array\n");
+    scanf("%d",&n);
+    printf("inter the elements in an array\n");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+     printf("Original array: ");
+    for (int i = 0; i < n; i++) 
+    {
+        printf("%d ", arr[i]);
+    }
+
+    // Remove duplicates in-place
+    int j = 0;
+    for (int i = 0; i < n; i++) {
+        if (i == 0 || arr[i] != arr[i - 1]) {
+            arr[j++] = arr[i];
+        }
+    }
+
+    // Update the size of the array
+    n = j;
+
+    printf("\nArray after removing duplicates: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
