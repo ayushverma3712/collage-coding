@@ -1,0 +1,35 @@
+//code for short an array.
+#include<stdio.h>
+int main()
+{
+    int arr[10],i,n;
+    printf("inter the size of an array\n");
+    scanf("%d",&n);
+    printf("inter the elements in an array\n");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    for (int i = 0; i < n - 1; i++) 
+    {
+        for (int j = 0; j < n - i - 1; j++) 
+        {
+            // Swap if the element found is greater than the next element
+            if (arr[j] > arr[j + 1]) 
+            {
+                // Simple swap without using a separate function
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    printf("Sorted array: \n");
+    for (int i = 0; i < n; i++) 
+    {
+        printf("%d ", arr[i]);
+    }
+    return 0;
+}
+
