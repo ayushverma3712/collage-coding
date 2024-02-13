@@ -1,0 +1,45 @@
+/*write a code in c to input a different numbers in an array then input number to 
+ search in the array.if no exist then print its index else print no do not exist*/
+
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+
+    int arr[n];
+
+    // Input elements into the array
+    printf("Enter %d elements:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    int numToSearch;
+    printf("Enter the number to search in the array: ");
+    scanf("%d", &numToSearch);
+
+    int found = 0; // Flag to check if the number is found
+    int index = -1; // Variable to store the index if found
+
+    // Search for the number in the array
+    for (int i = 0; i < n; i++) 
+    {
+        if (arr[i] == numToSearch) 
+        {
+            found = 1;
+            index = i;
+            break;
+        }
+    }
+
+    // Display the result
+    if (found) {
+        printf("%d found at index: %d\n", numToSearch, index);
+    } else {
+        printf("%d does not exist in the array\n", numToSearch);
+    }
+
+    return 0;
+}
