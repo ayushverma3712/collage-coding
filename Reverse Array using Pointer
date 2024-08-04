@@ -1,0 +1,30 @@
+#include <stdio.h>
+int main()
+{
+    int arr[50],i,a,temp;
+    int *ptr1,*ptr2;
+    printf("Enter the size of the array: ");
+    scanf("%d",&a);
+    printf("Enter the values in the array:\n");
+    for(i=0;i<a;i++) 
+    {
+        scanf("%d",&arr[i]);
+    }
+    // Initializing the pointers
+    ptr1 = arr;          // Points to the first element
+    ptr2 = arr + a - 1;  // Points to the last element
+    for(i=0;i<a/2;i++) 
+    {
+        temp = *ptr1;
+        *ptr1 = *ptr2;
+        *ptr2 = temp;
+        ptr1++;
+        ptr2--;
+    }
+    printf("Reversed Array is: ");
+    for(i=0;i<a;i++) 
+    {
+        printf("%d ",arr[i]);
+    }
+    return 0;
+}
