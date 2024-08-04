@@ -1,0 +1,107 @@
+/*
+#include <stdio.h>
+#include <stdlib.h>
+int main() 
+{
+    int *arr;
+    int i,a,b,count=0;
+    printf("Enter the size of the array\n");
+    scanf("%d", &a);
+    // Allocating memory for the array
+    arr=(int*)malloc(a*sizeof(int));
+    if(arr==NULL) 
+    {
+        printf("Memory allocation failed\n");
+        return 1; // Exit the program if memory allocation fails
+    }
+    printf("Enter the numbers in the array\n");
+    for(i=0;i<a;i++) 
+    {
+        scanf("%d",&arr[i]);
+    }
+    printf("Enter the value you want to search\n");
+    scanf("%d",&b);
+    for(i=0;i<a;i++) 
+    {
+        if(arr[i]==b) 
+        {
+            count++;
+            printf("Index: %d \n",i+1);
+        }
+    }
+    if(count==0) 
+    {
+        printf("Not found\n");
+    }
+    printf("\nTotal count: %d\n", count);
+    free(arr);
+    return 0;
+}
+*/
+#include <stdio.h>
+#include <stdlib.h>
+int main() 
+{
+    int *arr;
+    int i,a,b,count=0;
+    printf("Enter the size of the array\n");
+    scanf("%d", &a);
+    // Allocating memory for the array
+    arr=(int*)malloc(a*sizeof(int));
+    if(arr==NULL) 
+    {
+        printf("Memory allocation failed\n");
+        return 1; // Exit the program if memory allocation fails
+    }
+    printf("Enter the numbers in the array\n");
+    for(i=0;i<a;i++) 
+    {
+        scanf("%d",&arr[i]);
+    }
+    printf("Enter the value you want to search\n");
+    scanf("%d",&b);
+    for(i=0;i<a;i++) 
+    {
+        if(arr[i]==b) 
+        {
+            count++;
+            printf("Index: %d \n",i+1);
+        }
+    }
+    if(count==0) 
+    {
+        printf("Not found\n");
+    }
+    printf("\nTotal count: %d\n", count);
+    printf("Enter the size of the array\n");
+    scanf("%d", &a);
+    count=0;
+    arr=(int *)realloc(arr, sizeof(int)*a);
+    if(arr==NULL) 
+    {
+        printf("Memory allocation failed\n");
+        return 1; // Exit the program if memory allocation fails
+    }
+    printf("Enter the numbers in the array\n");
+    for(i=0;i<a;i++) 
+    {
+        scanf("%d",&arr[i]);
+    }
+    printf("Enter the value you want to search\n");
+    scanf("%d",&b);
+    for(i=0;i<a;i++) 
+    {
+        if(arr[i]==b) 
+        {
+            count++;
+            printf("Index: %d \n",i+1);
+        }
+    }
+    if(count==0) 
+    {
+        printf("Not found\n");
+    }
+    printf("\nTotal count: %d\n", count);
+    free(arr);
+    return 0;
+}
