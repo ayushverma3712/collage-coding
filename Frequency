@@ -1,0 +1,33 @@
+/* Write a c program to store N elements in 1 D array then count frequency of each element
+ in the array. Do not use temporary array.*/
+
+ #include <stdio.h>
+
+int main() {
+    int n, i, j, count;
+    int arr[100];
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter the elements:\n");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Frequency of each element:\n");
+    for (i = 0; i < n; i++) {
+        if (arr[i] != -1) {  // Check if element is not already counted
+            count = 1;
+            for (j = i + 1; j < n; j++) {
+                if (arr[i] == arr[j]) {
+                    count++;
+                    arr[j] = -1;  // Mark element as counted
+                }
+            }
+            printf("%d occurs %d times\n", arr[i], count);
+        }
+    }
+
+    return 0;
+}
